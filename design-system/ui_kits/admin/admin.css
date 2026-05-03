@@ -1,0 +1,22 @@
+.adm { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; background: var(--bg-subtle); font-family: var(--font-sans); }
+.adm-side { background: var(--ink-900); color: rgba(255,255,255,0.85); display: flex; flex-direction: column; padding: 14px 0; }
+.adm-side-head { padding: 4px 16px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
+.adm-side-head .dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--pulse-400); }
+.adm-side-head .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.adm-side-head .name { font-weight: 600; font-size: 14px; color: #fff; }
+.adm-nav { padding: 10px 8px; display: flex; flex-direction: column; gap: 2px; }
+.adm-nav-item { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: rgba(255,255,255,0.75); cursor: pointer; }
+.adm-nav-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.adm-nav-item.active { background: rgba(16,185,129,0.15); color: var(--pulse-300); }
+.adm-nav-item svg { stroke-width: 1.75; }
+
+.adm-main { display: flex; flex-direction: column; min-width: 0; }
+.adm-top { height: 52px; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 24px; gap: 12px; }
+.adm-top .crumb { font-size: 13px; color: var(--fg-muted); }
+.adm-top .crumb b { color: var(--fg); font-weight: 600; }
+.adm-content { padding: 24px 28px; flex: 1; }
+
+.adm-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 20px; }
+.adm-stat { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.adm-stat .l { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-subtle); }
+.adm-stat .v { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 500; margin-top: 4px; letter-spacing: -0.01em; }

@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 28px; align-items: center; padding: 28px; }
+  .logo-block { display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .logo-row { display: flex; align-items: center; gap: 18px; }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); width: 80px; }
+  .dark-bg { background: var(--ink-900); padding: 12px 18px; border-radius: 8px; }
+</style></head>
+<body>
+<div class="card">
+  <div class="logo-block">
+    <div class="logo-row"><span class="label">default</span><img src="../assets/logo.svg" height="40" /></div>
+    <div class="logo-row"><span class="label">on dark</span><div class="dark-bg"><img src="../assets/logo-light.svg" height="40" /></div></div>
+    <div class="logo-row"><span class="label">mark</span><img src="../assets/mark.svg" height="40" /><span style="font-family:var(--font-mono);font-size:11px;color:var(--fg-subtle)">favicon · app icon · avatar slot</span></div>
+  </div>
+</div>
+</body></html>

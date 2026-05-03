@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--bg-subtle); padding: 16px; }
+  .card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 10px 14px; background: var(--bg-subtle); border-bottom: 1px solid var(--border); font-weight: 500; color: var(--fg-muted); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--border-subtle); }
+  tr:last-child td { border-bottom: none; }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 500; border: 1px solid; }
+  .pill .dot { width: 5px; height: 5px; border-radius: 9999px; }
+  .paid { background: #ECFDF5; border-color: #A7F3D0; color: #065F46; }
+  .paid .dot { background: #059669; }
+  .pending { background: #FFFBEB; border-color: #FCD34D; color: #78350F; }
+  .pending .dot { background: #B45309; }
+</style></head>
+<body>
+<div class="card">
+<table>
+  <thead><tr><th>Order</th><th>Customer</th><th>Status</th><th style="text-align:right">Total</th></tr></thead>
+  <tbody>
+    <tr><td>#10428</td><td>Ana Costa</td><td><span class="pill paid"><span class="dot"></span>Paid</span></td><td class="num" style="text-align:right">$248.00</td></tr>
+    <tr><td>#10427</td><td>Marcus Wei</td><td><span class="pill pending"><span class="dot"></span>Pending</span></td><td class="num" style="text-align:right">$1,902.40</td></tr>
+    <tr><td>#10426</td><td>Sara Ngo</td><td><span class="pill paid"><span class="dot"></span>Paid</span></td><td class="num" style="text-align:right">$84.00</td></tr>
+  </tbody>
+</table>
+</div>
+</body></html>

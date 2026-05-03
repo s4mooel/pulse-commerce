@@ -1,0 +1,78 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  .card { display: flex; flex-direction: column; gap: 18px; padding: 22px 24px; }
+  .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .row-label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); width: 84px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.06em; }
+  .btn {
+    font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+    border-radius: 8px; padding: 8px 14px; border: 1px solid transparent;
+    cursor: pointer; line-height: 1; transition: all 150ms cubic-bezier(0.2,0.7,0.2,1);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn svg { stroke-width: 2; width: 14px; height: 14px; }
+  /* Variants */
+  .primary  { background: var(--pulse-600); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 1px 2px rgba(20,24,26,0.08); }
+  .primary:hover { background: var(--pulse-700); }
+  .pressed  { background: var(--pulse-800); color: #fff; transform: translateY(0.5px); box-shadow: inset 0 1px 1px rgba(0,0,0,0.18); }
+  .focused  { background: var(--pulse-600); color: #fff; box-shadow: 0 0 0 3px color-mix(in oklch, var(--pulse-600) 35%, transparent); }
+  .secondary{ background: var(--bg); color: var(--fg); border-color: var(--border); }
+  .secondary:hover { background: var(--bg-muted); border-color: var(--border-strong); }
+  .ghost    { background: transparent; color: var(--fg); }
+  .ghost:hover { background: var(--bg-muted); }
+  .danger   { background: var(--bg); color: #B91C1C; border-color: #FECACA; }
+  .danger:hover { background: #FEF2F2; }
+  .danger-solid { background: #B91C1C; color: #fff; }
+  .disabled { background: var(--ink-100); color: var(--fg-disabled); cursor: not-allowed; border-color: var(--border-subtle); }
+  .loading  { background: var(--pulse-700); color: #fff; cursor: progress; opacity: 0.92; }
+  .loading .spin { width: 12px; height: 12px; border: 1.6px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 9999px; animation: sp 0.7s linear infinite; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+  /* Sizes */
+  .sm { padding: 5px 10px; font-size: 12px; border-radius: 6px; }
+  .sm svg { width: 12px; height: 12px; }
+  .lg { padding: 11px 18px; font-size: 14px; border-radius: 10px; }
+  .lg svg { width: 16px; height: 16px; }
+  .icon-only { padding: 7px; }
+  .icon-only svg { width: 14px; height: 14px; }
+  /* Group */
+  .group { display: inline-flex; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .group .btn { border-radius: 0; border: none; border-right: 1px solid var(--border); background: var(--bg); }
+  .group .btn:last-child { border-right: none; }
+  .group .btn.active { background: var(--bg-muted); color: var(--fg); font-weight: 600; }
+  .group .btn:hover:not(.active) { background: var(--bg-subtle); }
+</style></head>
+<body>
+<div class="card">
+  <div class="row">
+    <span class="row-label">Variants</span>
+    <button class="btn primary"><i data-lucide="plus"></i>Create order</button>
+    <button class="btn secondary">Save draft</button>
+    <button class="btn ghost">Cancel</button>
+    <button class="btn danger"><i data-lucide="trash-2"></i>Delete</button>
+    <button class="btn danger-solid">Refund $48.20</button>
+  </div>
+  <div class="row">
+    <span class="row-label">States</span>
+    <button class="btn primary">Default</button>
+    <button class="btn primary" style="background:var(--pulse-700)">Hover</button>
+    <button class="btn pressed">Pressed</button>
+    <button class="btn focused">Focus</button>
+    <button class="btn loading"><span class="spin"></span>Saving…</button>
+    <button class="btn disabled" disabled>Disabled</button>
+  </div>
+  <div class="row">
+    <span class="row-label">Sizes</span>
+    <button class="btn primary sm">Small</button>
+    <button class="btn primary">Base</button>
+    <button class="btn primary lg">Large</button>
+    <button class="btn secondary icon-only" aria-label="Filter"><i data-lucide="sliders-horizontal"></i></button>
+    <div class="group">
+      <button class="btn sm active">Day</button>
+      <button class="btn sm">Week</button>
+      <button class="btn sm">Month</button>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

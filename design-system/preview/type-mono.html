@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 24px; align-items: stretch; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); }
+  .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 500; letter-spacing: -0.01em; color: var(--fg); }
+  .sub { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); }
+  pre { font-family: var(--font-mono); font-size: 12px; background: var(--bg-muted); padding: 12px; border-radius: 8px; margin: 0; color: var(--fg); }
+</style></head>
+<body>
+<div class="card">
+  <div class="col">
+    <span class="label">Tabular numerics</span>
+    <span class="num">$1,284,902.40</span>
+    <span class="num">+ 12.4%</span>
+    <span class="sub">Geist Mono · tabular-nums</span>
+  </div>
+  <div class="col">
+    <span class="label">Inline code</span>
+<pre>POST /v1/orders
+Idempotency-Key: ord_8Hf2…</pre>
+  </div>
+</div>
+</body></html>

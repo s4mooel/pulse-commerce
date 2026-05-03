@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 16px; align-items: stretch; padding: 22px 28px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .col h6 { margin: 0 0 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); }
+  .yes, .no { padding: 10px 12px; border-radius: 8px; font-size: 13px; line-height: 1.5; }
+  .yes { background: var(--pulse-50); border: 1px solid var(--pulse-200); color: var(--ink-900); }
+  .no  { background: var(--danger-bg); border: 1px solid var(--danger-border); color: var(--ink-900); text-decoration: line-through; text-decoration-color: var(--danger); text-decoration-thickness: 1px; }
+</style></head>
+<body>
+<div class="card">
+  <div class="col">
+    <h6>On-brand</h6>
+    <div class="yes">"Refunded $48.20. The customer was emailed."</div>
+    <div class="yes">"Connect a store to begin."</div>
+    <div class="yes">"Sub-200ms checkout, every region."</div>
+  </div>
+  <div class="col">
+    <h6>Off-brand</h6>
+    <div class="no">"Oops! Something went wrong 😬"</div>
+    <div class="no">"Welcome to Pulse! 🎉 Let's get started."</div>
+    <div class="no">"Our amazing analytics are blazing fast"</div>
+  </div>
+</div>
+</body></html>

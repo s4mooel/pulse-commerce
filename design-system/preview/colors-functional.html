@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tok {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .tok .swatch { width: 100%; height: 28px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.04); }
+  .tok .name { font-size: 12px; font-weight: 600; color: var(--fg); }
+  .tok .var { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+</style></head>
+<body>
+<div class="card">
+  <div class="tok"><div class="swatch" style="background:var(--bg)"></div><span class="name">Background</span><span class="var">--bg</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--bg-subtle)"></div><span class="name">Background subtle</span><span class="var">--bg-subtle</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--bg-muted)"></div><span class="name">Background muted</span><span class="var">--bg-muted</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--fg)"></div><span class="name">Foreground</span><span class="var">--fg</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--fg-muted)"></div><span class="name">Foreground muted</span><span class="var">--fg-muted</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--fg-subtle)"></div><span class="name">Foreground subtle</span><span class="var">--fg-subtle</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--border)"></div><span class="name">Border</span><span class="var">--border</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--border-strong)"></div><span class="name">Border strong</span><span class="var">--border-strong</span></div>
+  <div class="tok"><div class="swatch" style="background:var(--action)"></div><span class="name">Action</span><span class="var">--action</span></div>
+</div>
+</body></html>

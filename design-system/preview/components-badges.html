@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 9999px;
+    font-size: 12px; font-weight: 500; line-height: 1.4;
+    border: 1px solid;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 9999px; }
+  .b-success { background: #ECFDF5; border-color: #A7F3D0; color: #065F46; }
+  .b-success .dot { background: #059669; }
+  .b-warn { background: #FFFBEB; border-color: #FCD34D; color: #78350F; }
+  .b-warn .dot { background: #B45309; }
+  .b-danger { background: #FEF2F2; border-color: #FECACA; color: #7F1D1D; }
+  .b-danger .dot { background: #B91C1C; }
+  .b-info { background: #EFF6FF; border-color: #BFDBFE; color: #1E3A8A; }
+  .b-info .dot { background: #1D4ED8; }
+  .b-neutral { background: var(--bg-muted); border-color: var(--border); color: var(--fg-muted); }
+  .b-neutral .dot { background: var(--ink-500); }
+  .b-solid { background: var(--ink-900); border-color: var(--ink-900); color: #fff; }
+</style></head>
+<body>
+<div class="card">
+  <span class="badge b-success"><span class="dot"></span>Paid</span>
+  <span class="badge b-warn"><span class="dot"></span>Pending</span>
+  <span class="badge b-danger"><span class="dot"></span>Failed</span>
+  <span class="badge b-info"><span class="dot"></span>Processing</span>
+  <span class="badge b-neutral"><span class="dot"></span>Draft</span>
+  <span class="badge b-neutral">12 items</span>
+  <span class="badge b-solid">Pro</span>
+</div>
+</body></html>

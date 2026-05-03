@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--bg-subtle); }
+  .card { display: flex; gap: 16px; align-items: center; }
+  .nav { width: 220px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 8px; }
+  .item { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: var(--fg); cursor: default; }
+  .item:hover { background: var(--bg-muted); }
+  .item.active { background: var(--pulse-50); color: var(--pulse-800); font-weight: 500; }
+  .item.active .ico { color: var(--pulse-700); }
+  .ico { width: 16px; height: 16px; color: var(--fg-muted); display: inline-grid; place-items: center; font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+  .group-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); padding: 10px 10px 6px; }
+</style></head>
+<body>
+<div class="card">
+  <div class="nav">
+    <div class="group-label">Operate</div>
+    <div class="item"><span class="ico">◇</span>Home</div>
+    <div class="item active"><span class="ico">▤</span>Orders</div>
+    <div class="item"><span class="ico">▦</span>Inventory</div>
+    <div class="item"><span class="ico">○</span>Customers</div>
+    <div class="group-label">Grow</div>
+    <div class="item"><span class="ico">⌁</span>Analytics</div>
+    <div class="item"><span class="ico">⎈</span>Settings</div>
+  </div>
+  <div style="flex:1; color: var(--fg-muted); font-size: 12px; line-height: 1.6">
+    Active state uses <code style="font-family:var(--font-mono);font-size:11px">--pulse-50</code> tinted background and <code style="font-family:var(--font-mono);font-size:11px">--pulse-800</code> text. The accent color earns its presence — never used for hover.
+  </div>
+</div>
+</body></html>

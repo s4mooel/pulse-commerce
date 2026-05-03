@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 14px; align-items: center; }
+  .alert {
+    display: flex; gap: 12px; align-items: flex-start; flex: 1;
+    padding: 12px 14px; border-radius: 10px; border: 1px solid;
+    font-size: 13px;
+  }
+  .alert .icon { font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; width: 18px; height: 18px; border-radius: 9999px; display: grid; place-items: center; font-size: 11px; }
+  .alert .body strong { display: block; margin-bottom: 2px; }
+  .a-success { background: #ECFDF5; border-color: #A7F3D0; color: #065F46; }
+  .a-success .icon { background: #059669; color: #fff; }
+  .a-warn { background: #FFFBEB; border-color: #FCD34D; color: #78350F; }
+  .a-warn .icon { background: #B45309; color: #fff; }
+  .a-danger { background: #FEF2F2; border-color: #FECACA; color: #7F1D1D; }
+  .a-danger .icon { background: #B91C1C; color: #fff; }
+</style></head>
+<body>
+<div class="card">
+  <div class="alert a-success"><div class="icon">✓</div><div class="body"><strong>Refund processed</strong>$48.20 returned to Ana Costa.</div></div>
+  <div class="alert a-warn"><div class="icon">!</div><div class="body"><strong>Stripe key expires in 7 days</strong>Rotate before Nov 12 to avoid downtime.</div></div>
+</div>
+</body></html>

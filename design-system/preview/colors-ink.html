@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 8px; align-items: center; }
+  .swatch {
+    flex: 1; height: 96px; border-radius: 10px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 10px; box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .swatch .name { font-size: 11px; font-weight: 600; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.75; }
+  .light { color: var(--ink-900); }
+  .dark  { color: #fff; }
+</style></head>
+<body>
+<div class="card">
+  <div class="swatch light" style="background:#FFFFFF"><span class="name">0</span><span class="hex">#FFFFFF</span></div>
+  <div class="swatch light" style="background:#F8FAF9"><span class="name">50</span><span class="hex">#F8FAF9</span></div>
+  <div class="swatch light" style="background:#F1F4F2"><span class="name">100</span><span class="hex">#F1F4F2</span></div>
+  <div class="swatch light" style="background:#E8ECEA"><span class="name">150</span><span class="hex">#E8ECEA</span></div>
+  <div class="swatch light" style="background:#DCE2DF"><span class="name">200</span><span class="hex">#DCE2DF</span></div>
+  <div class="swatch light" style="background:#C2CAC6"><span class="name">300</span><span class="hex">#C2CAC6</span></div>
+  <div class="swatch dark" style="background:#98A29D"><span class="name">400</span><span class="hex">#98A29D</span></div>
+  <div class="swatch dark" style="background:#6B7570"><span class="name">500</span><span class="hex">#6B7570</span></div>
+  <div class="swatch dark" style="background:#4A524E"><span class="name">600</span><span class="hex">#4A524E</span></div>
+  <div class="swatch dark" style="background:#353B38"><span class="name">700</span><span class="hex">#353B38</span></div>
+  <div class="swatch dark" style="background:#232826"><span class="name">800</span><span class="hex">#232826</span></div>
+  <div class="swatch dark" style="background:#14181A"><span class="name">900</span><span class="hex">#14181A</span></div>
+  <div class="swatch dark" style="background:#0A0C0D"><span class="name">950</span><span class="hex">#0A0C0D</span></div>
+</div>
+</body></html>

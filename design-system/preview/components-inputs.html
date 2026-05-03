@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 12px; font-weight: 500; color: var(--fg); }
+  input, select {
+    font-family: var(--font-sans); font-size: 14px;
+    padding: 9px 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+  input:focus, select:focus { outline: none; border-color: var(--pulse-600); box-shadow: 0 0 0 3px color-mix(in oklch, var(--pulse-600) 25%, transparent); }
+  input.error { border-color: var(--danger); }
+  .help { font-size: 12px; color: var(--fg-subtle); }
+  .err { font-size: 12px; color: var(--danger); }
+</style></head>
+<body>
+<div class="card">
+  <div class="field">
+    <label>Order ID</label>
+    <input value="ord_8Hf2xQ91" />
+    <span class="help">Auto-generated. Read-only.</span>
+  </div>
+  <div class="field">
+    <label>Customer email</label>
+    <input class="error" value="ana@" />
+    <span class="err">Must be a valid email address.</span>
+  </div>
+  <div class="field">
+    <label>Currency</label>
+    <select><option>USD — United States Dollar</option></select>
+    <span class="help">Default for this store.</span>
+  </div>
+  <div class="field">
+    <label>Status</label>
+    <input placeholder="Search statuses…" />
+    <span class="help">Type to filter.</span>
+  </div>
+</div>
+</body></html>

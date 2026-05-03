@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { display: flex; gap: 14px; align-items: center; }
+  .swatch {
+    flex: 1; height: 96px; border-radius: 10px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 10px; box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .swatch .name { font-size: 11px; font-weight: 600; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.75; }
+  .swatch.s50, .swatch.s100, .swatch.s200, .swatch.s300 { color: var(--ink-900); }
+  .swatch.s400, .swatch.s500, .swatch.s600, .swatch.s700, .swatch.s800, .swatch.s900, .swatch.s950 { color: #fff; }
+</style></head>
+<body>
+<div class="card">
+  <div class="swatch s50"  style="background:#ECFDF5"><span class="name">50</span><span class="hex">#ECFDF5</span></div>
+  <div class="swatch s100" style="background:#D1FAE5"><span class="name">100</span><span class="hex">#D1FAE5</span></div>
+  <div class="swatch s200" style="background:#A7F3D0"><span class="name">200</span><span class="hex">#A7F3D0</span></div>
+  <div class="swatch s300" style="background:#6EE7B7"><span class="name">300</span><span class="hex">#6EE7B7</span></div>
+  <div class="swatch s400" style="background:#34D399"><span class="name">400</span><span class="hex">#34D399</span></div>
+  <div class="swatch s500" style="background:#10B981"><span class="name">500</span><span class="hex">#10B981</span></div>
+  <div class="swatch s600" style="background:#059669;outline:2px solid var(--pulse-700);outline-offset:2px"><span class="name">600 ◆</span><span class="hex">#059669</span></div>
+  <div class="swatch s700" style="background:#047857"><span class="name">700</span><span class="hex">#047857</span></div>
+  <div class="swatch s800" style="background:#065F46"><span class="name">800</span><span class="hex">#065F46</span></div>
+  <div class="swatch s900" style="background:#064E3B"><span class="name">900</span><span class="hex">#064E3B</span></div>
+</div>
+</body></html>

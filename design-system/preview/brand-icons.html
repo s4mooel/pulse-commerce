@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  .card { display: flex; flex-direction: column; gap: 16px; padding: 20px 28px; }
+  .row { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .icon-cell { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 56px; }
+  .icon-cell svg { color: var(--fg); stroke-width: 1.75; }
+  .icon-cell .name { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); }
+  .note { font-size: 11px; color: var(--fg-muted); font-family: var(--font-mono); }
+</style></head>
+<body>
+<div class="card">
+  <div class="row">
+    <div class="icon-cell"><i data-lucide="shopping-bag" width="22" height="22"></i><span class="name">shopping-bag</span></div>
+    <div class="icon-cell"><i data-lucide="package" width="22" height="22"></i><span class="name">package</span></div>
+    <div class="icon-cell"><i data-lucide="users" width="22" height="22"></i><span class="name">users</span></div>
+    <div class="icon-cell"><i data-lucide="bar-chart-3" width="22" height="22"></i><span class="name">bar-chart</span></div>
+    <div class="icon-cell"><i data-lucide="settings" width="22" height="22"></i><span class="name">settings</span></div>
+    <div class="icon-cell"><i data-lucide="search" width="22" height="22"></i><span class="name">search</span></div>
+    <div class="icon-cell"><i data-lucide="bell" width="22" height="22"></i><span class="name">bell</span></div>
+    <div class="icon-cell"><i data-lucide="credit-card" width="22" height="22"></i><span class="name">credit-card</span></div>
+    <div class="icon-cell"><i data-lucide="truck" width="22" height="22"></i><span class="name">truck</span></div>
+    <div class="icon-cell"><i data-lucide="plus" width="22" height="22"></i><span class="name">plus</span></div>
+  </div>
+  <div class="note">Lucide · stroke 1.75 · currentColor · sizes 14/16/20/24</div>
+</div>
+<script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--bg-subtle); }
+  .card { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .c {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .c.lift { box-shadow: var(--shadow-sm); }
+  .c .label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-subtle); }
+  .c .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 500; letter-spacing: -0.01em; }
+  .c .delta { font-family: var(--font-mono); font-size: 12px; color: var(--pulse-700); }
+  .c .delta.down { color: var(--danger); }
+</style></head>
+<body>
+<div class="card">
+  <div class="c lift">
+    <span class="label">Revenue today</span>
+    <span class="num">$48,290.10</span>
+    <span class="delta">+ 12.4% vs. yesterday</span>
+  </div>
+  <div class="c">
+    <span class="label">Refund rate</span>
+    <span class="num">2.1%</span>
+    <span class="delta down">+ 0.3pp vs. last week</span>
+  </div>
+</div>
+</body></html>
