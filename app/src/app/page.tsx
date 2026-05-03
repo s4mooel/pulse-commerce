@@ -1,56 +1,60 @@
 import Link from 'next/link';
-import { ArrowRight, Boxes, LineChart, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Boxes, LineChart, ShieldCheck, Zap, Globe, Cpu, BarChart3 } from 'lucide-react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
-    <>
+    <div className="min-h-screen bg-white dark:bg-ink-950">
       <Nav />
 
       {/* Hero */}
-      <section className="border-b border-ink-150">
-        <div className="max-w-wide mx-auto px-8 pt-24 pb-32">
-          <div className="eyebrow mb-8 flex items-center gap-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-pulse-600" />
+      <section className="border-b border-ink-150 dark:border-ink-800 relative overflow-hidden">
+        {/* Decorative gradient orb */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-pulse-200/40 to-pulse-400/20 dark:from-pulse-600/10 dark:to-pulse-800/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-gradient-to-tr from-pulse-100/30 to-transparent dark:from-pulse-900/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-wide mx-auto px-8 pt-24 pb-32 relative">
+          <div className="eyebrow mb-8 flex items-center gap-3 animate-fade-in-up">
+            <span className="w-1.5 h-1.5 rounded-full bg-pulse-600 animate-pulse-glow" />
             Pulse Commerce — v3.4
           </div>
-          <h1 className="font-serif text-[clamp(48px,7vw,96px)] leading-[0.98] tracking-[-0.035em] font-normal max-w-[960px] mb-6">
-            Commerce infrastructure for brands that <em className="italic text-pulse-700">move</em>.
+          <h1 className="font-serif text-[clamp(48px,7vw,96px)] leading-[0.98] tracking-[-0.035em] font-normal max-w-[960px] mb-6 text-ink-900 dark:text-white animate-fade-in-up delay-100">
+            Commerce infrastructure for brands that <em className="italic text-pulse-700 dark:text-pulse-400">move</em>.
           </h1>
-          <p className="text-xl leading-snug text-ink-600 max-w-[640px] mb-10">
+          <p className="text-xl leading-snug text-ink-600 dark:text-ink-300 max-w-[640px] mb-10 animate-fade-in-up delay-200">
             One system of record for orders, inventory, customers, and storefronts —
             across every channel and region you sell in.
           </p>
-          <div className="flex gap-3">
-            <Link href="/dashboard" className="btn btn-primary">
+          <div className="flex gap-3 animate-fade-in-up delay-300">
+            <Link href="/dashboard" className="btn btn-primary no-underline">
               See the dashboard <ArrowRight size={16} />
             </Link>
-            <a href="#features" className="btn btn-secondary">Read the docs</a>
+            <a href="#features" className="btn btn-secondary no-underline">Read the docs</a>
           </div>
         </div>
       </section>
 
       {/* Logo strip */}
-      <section className="border-b border-ink-150 bg-ink-50">
-        <div className="max-w-wide mx-auto px-8 py-12 flex flex-wrap items-center justify-between gap-8">
-          <p className="text-sm text-ink-500">Trusted by retailers doing $50M+ a year</p>
-          <div className="flex flex-wrap gap-12 items-center text-ink-400 font-display font-semibold text-xl tracking-tight">
-            <span>Northland</span>
-            <span>Mariner&amp;Co</span>
-            <span>Field Goods</span>
-            <span>Atlas Outfit</span>
-            <span>Heron</span>
-            <span>Quill</span>
+      <section className="border-b border-ink-150 dark:border-ink-800 bg-ink-50 dark:bg-ink-900/50">
+        <div className="max-w-wide mx-auto px-8 py-12 flex flex-wrap items-center justify-between gap-8 animate-fade-in delay-400">
+          <p className="text-sm text-ink-500 dark:text-ink-400">Trusted by retailers doing $50M+ a year</p>
+          <div className="flex flex-wrap gap-12 items-center text-ink-400 dark:text-ink-500 font-display font-semibold text-xl tracking-tight">
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Northland</span>
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Mariner&amp;Co</span>
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Field Goods</span>
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Atlas Outfit</span>
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Heron</span>
+            <span className="hover:text-ink-700 dark:hover:text-ink-200 transition-colors cursor-default">Quill</span>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section id="features" className="border-b border-ink-150">
+      <section id="features" className="border-b border-ink-150 dark:border-ink-800 bg-white dark:bg-ink-950">
         <div className="max-w-wide mx-auto px-8 py-24">
-          <div className="eyebrow mb-4">The platform</div>
-          <h2 className="text-4xl font-semibold tracking-tight max-w-[720px] mb-16">
+          <div className="eyebrow mb-4 animate-fade-in-up">The platform</div>
+          <h2 className="text-4xl font-semibold tracking-tight max-w-[720px] mb-16 text-ink-900 dark:text-white animate-fade-in-up delay-100">
             Everything you need to run commerce, in one ledger-grade system.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -58,29 +62,77 @@ export default function HomePage() {
               icon={<Boxes size={20} />}
               title="Unified inventory"
               body="One source of truth across stores, warehouses, and 3PLs. Real-time, no nightly reconciliation."
+              delay="delay-200"
             />
             <Feature
               icon={<Zap size={20} />}
               title="Sub-200ms checkout"
               body="Edge-rendered checkout in 32 regions. Same latency for the first shopper as the millionth."
+              delay="delay-300"
             />
             <Feature
               icon={<LineChart size={20} />}
               title="Operator dashboards"
               body="Real numbers, refreshed every 30 seconds. Filter, drill, export — without a data team."
+              delay="delay-400"
             />
             <Feature
               icon={<ShieldCheck size={20} />}
               title="Ledger-grade orders"
               body="Every order is double-entry. Refunds, exchanges, partial fulfillments — always reconciled."
+              delay="delay-500"
             />
           </div>
         </div>
       </section>
 
+      {/* Stats strip */}
+      <section className="border-b border-ink-150 dark:border-ink-800 bg-ink-50 dark:bg-ink-900/30">
+        <div className="max-w-wide mx-auto px-8 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { value: '$2.4B', label: 'GMV processed' },
+            { value: '41', label: 'Retailers live' },
+            { value: '32', label: 'Edge regions' },
+            { value: '99.99%', label: 'Uptime SLA' },
+          ].map((s, i) => (
+            <div key={s.label} className={`text-center animate-fade-in-up delay-${(i + 2) * 100}`}>
+              <div className="numeric text-4xl font-semibold tracking-tight text-ink-900 dark:text-white mb-2">{s.value}</div>
+              <div className="text-sm text-ink-500 dark:text-ink-400">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="border-b border-ink-150 dark:border-ink-800 bg-white dark:bg-ink-950">
+        <div className="max-w-wide mx-auto px-8 py-24">
+          <div className="eyebrow mb-4">How it works</div>
+          <h2 className="text-4xl font-semibold tracking-tight max-w-[720px] mb-16 text-ink-900 dark:text-white">
+            From integration to launch in weeks, not months.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: <Cpu size={24} />, step: '01', title: 'Connect', desc: 'Plug into your existing stack. We support 200+ integrations out of the box — ERP, 3PL, payments, and shipping.' },
+              { icon: <Globe size={24} />, step: '02', title: 'Configure', desc: 'Set up storefronts, regions, currencies, and tax rules. Our migration team handles the heavy lifting.' },
+              { icon: <BarChart3 size={24} />, step: '03', title: 'Launch', desc: 'Go live with zero downtime. Real-time dashboards from day one. Scale to any volume, any region.' },
+            ].map((item) => (
+              <div key={item.step} className="group">
+                <div className="w-12 h-12 rounded-lg bg-pulse-50 dark:bg-pulse-900/30 text-pulse-700 dark:text-pulse-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <div className="eyebrow text-pulse-600 dark:text-pulse-400 mb-3">{item.step}</div>
+                <h3 className="text-xl font-semibold text-ink-900 dark:text-white mb-3 tracking-tight">{item.title}</h3>
+                <p className="text-ink-600 dark:text-ink-300 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="bg-ink-900 text-white">
-        <div className="max-w-wide mx-auto px-8 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="bg-ink-900 dark:bg-ink-950 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-pulse-600/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-wide mx-auto px-8 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative">
           <div>
             <h2 className="font-serif text-5xl tracking-tight font-normal mb-3">
               Ready when you are.
@@ -89,25 +141,25 @@ export default function HomePage() {
               30-minute technical scoping. Migration team included for retailers above $100M GMV.
             </p>
           </div>
-          <Link href="/dashboard" className="btn btn-primary">
+          <Link href="/dashboard" className="btn btn-primary no-underline">
             Open the dashboard <ArrowRight size={16} />
           </Link>
         </div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }
 
-function Feature({ icon, title, body }: { icon: React.ReactNode; title: string; body: string }) {
+function Feature({ icon, title, body, delay }: { icon: React.ReactNode; title: string; body: string; delay?: string }) {
   return (
-    <div className="border border-ink-150 rounded-lg p-6 bg-white">
-      <div className="w-10 h-10 rounded-md bg-pulse-50 text-pulse-700 flex items-center justify-center mb-6">
+    <div className={`border border-ink-150 dark:border-ink-800 rounded-lg p-6 bg-white dark:bg-ink-900 card-hover animate-fade-in-up ${delay ?? ''}`}>
+      <div className="w-10 h-10 rounded-md bg-pulse-50 dark:bg-pulse-900/30 text-pulse-700 dark:text-pulse-400 flex items-center justify-center mb-6">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 tracking-snug">{title}</h3>
-      <p className="text-ink-600 leading-normal">{body}</p>
+      <h3 className="text-lg font-semibold mb-2 tracking-snug text-ink-900 dark:text-white">{title}</h3>
+      <p className="text-ink-600 dark:text-ink-300 leading-normal">{body}</p>
     </div>
   );
 }

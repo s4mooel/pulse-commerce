@@ -1,6 +1,6 @@
 import DashboardShell from '@/components/DashboardShell';
+import { StatusPill } from '@/components/StatusPill';
 import { orders, currency, relativeDate } from '@/lib/data';
-import { StatusPill } from '../page';
 import { Filter, Download } from 'lucide-react';
 
 export default function OrdersPage() {

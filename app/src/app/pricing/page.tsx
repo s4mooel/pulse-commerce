@@ -48,15 +48,15 @@ const TIERS = [
 
 export default function PricingPage() {
   return (
-    <>
+    <div className="min-h-screen bg-white dark:bg-ink-950">
       <Nav />
       <section className="border-b border-ink-150 dark:border-ink-800">
         <div className="max-w-wide mx-auto px-8 pt-20 pb-12 text-center">
-          <div className="eyebrow mb-6">Pricing</div>
-          <h1 className="font-serif text-5xl md:text-6xl tracking-tight font-normal text-ink-900 dark:text-white mb-4 max-w-3xl mx-auto">
-            Priced like infrastructure, <em className="italic text-pulse-700">not</em> like a tax on growth.
+          <div className="eyebrow mb-6 animate-fade-in-up">Pricing</div>
+          <h1 className="font-serif text-5xl md:text-6xl tracking-tight font-normal text-ink-900 dark:text-white mb-4 max-w-3xl mx-auto animate-fade-in-up delay-100">
+            Priced like infrastructure, <em className="italic text-pulse-700 dark:text-pulse-400">not</em> like a tax on growth.
           </h1>
-          <p className="text-lg text-ink-600 dark:text-ink-300 max-w-xl mx-auto">
+          <p className="text-lg text-ink-600 dark:text-ink-300 max-w-xl mx-auto animate-fade-in-up delay-200">
             Flat platform fee plus low transaction costs. No revenue share, no GMV tax.
           </p>
         </div>
@@ -64,20 +64,20 @@ export default function PricingPage() {
 
       <section className="border-b border-ink-150 dark:border-ink-800">
         <div className="max-w-wide mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TIERS.map((t) => (
+          {TIERS.map((t, i) => (
             <div
               key={t.name}
-              className={`rounded-xl p-8 border ${
+              className={`rounded-xl p-8 border card-hover animate-fade-in-up ${
                 t.featured
-                  ? 'bg-ink-900 text-white border-ink-900'
+                  ? 'bg-ink-900 dark:bg-ink-800 text-white border-ink-900 dark:border-ink-700 ring-2 ring-pulse-600/30'
                   : 'bg-white dark:bg-ink-900 border-ink-150 dark:border-ink-800 text-ink-900 dark:text-white'
-              }`}
+              } delay-${(i + 2) * 100}`}
             >
               <h2 className="font-display text-2xl font-semibold tracking-tight">{t.name}</h2>
               <p className={`mt-2 text-sm ${t.featured ? 'text-ink-300' : 'text-ink-600 dark:text-ink-400'}`}>{t.blurb}</p>
               <div className="mt-8 mb-8 flex items-baseline gap-1">
                 <span className="numeric text-5xl font-semibold tracking-tight">{t.price}</span>
-                <span className={t.featured ? 'text-ink-400' : 'text-ink-500'}>{t.period}</span>
+                <span className={t.featured ? 'text-ink-400' : 'text-ink-500 dark:text-ink-400'}>{t.period}</span>
               </div>
               <button
                 className={`btn w-full justify-center ${
@@ -99,6 +99,6 @@ export default function PricingPage() {
         </div>
       </section>
       <Footer />
-    </>
+    </div>
   );
 }
