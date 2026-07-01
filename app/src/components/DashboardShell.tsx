@@ -26,39 +26,34 @@ export default function DashboardShell({
   return (
     <div className="min-h-screen flex bg-ink-50 dark:bg-ink-950">
       {/* Sidebar — desktop */}
-      <motion.aside 
-        initial={{ x: -20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className="hidden md:flex w-60 bg-white dark:bg-ink-900 border-r border-ink-150 dark:border-ink-800 flex-col"
-      >
+      <aside className="hidden md:flex w-60 bg-white dark:bg-ink-900 border-r border-ink-150 dark:border-ink-800 flex-col">
         <SidebarBrand />
         <SidebarNav pathname={pathname} />
-      </motion.aside>
+      </aside>
 
       {/* Sidebar — mobile drawer */}
-      <AnimatePresence>
-        {open && (
-          <div key="mobile-drawer" className="md:hidden fixed inset-0 z-50 flex">
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-ink-900/40" 
-              onClick={() => setOpen(false)} 
-            />
-            <motion.aside 
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="relative w-60 bg-white dark:bg-ink-900 flex flex-col"
-            >
-              <SidebarBrand onClose={() => setOpen(false)} />
-              <SidebarNav pathname={pathname} onNav={() => setOpen(false)} />
-            </motion.aside>
-          </div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <motion.div 
+          key="mobile-drawer" 
+          className="md:hidden fixed inset-0 z-50 flex"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <div 
+            className="absolute inset-0 bg-ink-900/40" 
+            onClick={() => setOpen(false)} 
+          />
+          <motion.aside 
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="relative w-60 bg-white dark:bg-ink-900 flex flex-col"
+          >
+            <SidebarBrand onClose={() => setOpen(false)} />
+            <SidebarNav pathname={pathname} onNav={() => setOpen(false)} />
+          </motion.aside>
+        </motion.div>
+      )}
 
       <div className="flex-1 flex flex-col min-w-0">
         {/* Topbar */}

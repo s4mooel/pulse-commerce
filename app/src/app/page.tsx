@@ -49,7 +49,7 @@ export default function HomePage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex gap-3"
           >
-            <Link href="/dashboard" className="btn btn-primary no-underline">
+            <Link href="/login" className="btn btn-primary no-underline">
               Ver el dashboard <ArrowRight size={16} />
             </Link>
             <Link href="/about" className="btn btn-secondary no-underline">
@@ -224,7 +224,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
           >
-            <Link href="/dashboard" className="btn btn-primary no-underline">
+            <Link href="/login" className="btn btn-primary no-underline">
               Abrir el dashboard <ArrowRight size={16} />
             </Link>
           </motion.div>

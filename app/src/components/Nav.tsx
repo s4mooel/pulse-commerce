@@ -23,7 +23,7 @@ export default function Nav() {
           </motion.div>
           <ThemeToggle />
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/dashboard" className="ml-2 btn btn-primary h-9 px-4 text-sm no-underline">
+            <Link href="/login" className="ml-2 btn btn-primary h-9 px-4 text-sm no-underline">
               Dashboard
             </Link>
           </motion.div>

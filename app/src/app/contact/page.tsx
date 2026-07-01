@@ -5,9 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { Mail, Github, Linkedin, Send, User, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import en from '@/dictionaries/en.json';
-import es from '@/dictionaries/es.json';
+import { motion } from 'framer-motion';
 
 const FAQS = [
   { q: '¿Qué tecnologías usaste para este proyecto?', a: 'El proyecto está construido principalmente con Next.js 14 (App Router), React, TypeScript y Tailwind CSS. Utilizo componentes funcionales de React y una arquitectura enfocada en la separación de intereses (UI vs Datos).' },
@@ -24,10 +22,6 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const pathname = usePathname();
-  const lang = (pathname.split('/')[1] as 'en' | 'es') || 'es';
-  const dict = lang === 'en' ? en : es;
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -35,18 +29,18 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-ink-950">
-      <Nav lang={lang} dict={dict} />
+      <Nav />
 
       {/* Hero */}
       <section className="border-b border-ink-150 dark:border-ink-800 relative overflow-hidden">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-pulse-200/30 to-transparent dark:from-pulse-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-wide mx-auto px-8 pt-20 pb-16 relative">
-          <div className="eyebrow mb-6 animate-fade-in-up">{dict.contact.eyebrow}</div>
+          <div className="eyebrow mb-6 animate-fade-in-up">Ponte en contacto</div>
           <h1 className="font-serif text-5xl md:text-6xl tracking-tight font-normal text-ink-900 dark:text-white mb-6 max-w-3xl animate-fade-in-up delay-100">
-            {dict.contact.title1}<em className="italic text-pulse-700 dark:text-pulse-400">{dict.contact.titleEm}</em>{dict.contact.title2}
+            Hablemos sobre tu <em className="italic text-pulse-700 dark:text-pulse-400">próximo</em> proyecto
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-xl animate-fade-in-up delay-200">
-            {dict.contact.desc}
+            Me encantaría saber sobre tu negocio y cómo puedo ayudarte. Llena el formulario o envíame un mensaje directo.
           </p>
         </div>
       </section>
@@ -56,73 +50,73 @@ export default function ContactPage() {
         <div className="max-w-wide mx-auto px-8 py-20 grid md:grid-cols-2 gap-12">
           {/* Form */}
           <div>
-            <h2 className="text-2xl font-semibold text-ink-900 dark:text-white mb-8 tracking-tight">{dict.contact.msgTitle}</h2>
+            <h2 className="text-2xl font-semibold text-ink-900 dark:text-white mb-8 tracking-tight">Envíame un mensaje</h2>
             {submitted ? (
               <div className="bg-pulse-50 dark:bg-pulse-900/20 border border-pulse-200 dark:border-pulse-800 rounded-lg p-8 text-center animate-scale-in">
                 <div className="w-12 h-12 rounded-full bg-pulse-600 text-white flex items-center justify-center mx-auto mb-4">
                   <Send size={20} />
                 </div>
-                <h3 className="text-xl font-semibold text-ink-900 dark:text-white mb-2">{dict.contact.successTitle}</h3>
-                <p className="text-ink-600 dark:text-ink-300">{dict.contact.successDesc}</p>
+                <h3 className="text-xl font-semibold text-ink-900 dark:text-white mb-2">¡Mensaje enviado!</h3>
+                <p className="text-ink-600 dark:text-ink-300">Me pondré en contacto contigo lo más pronto posible.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">{dict.contact.formName}</label>
+                    <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">Nombre</label>
                     <input
                       required value={name} onChange={(e) => setName(e.target.value)}
                       className="w-full h-10 px-3 rounded-md border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800 text-sm text-ink-900 dark:text-white focus:outline-none focus:border-pulse-600 focus:shadow-[0_0_0_3px_rgba(5,150,105,0.15)] transition-shadow"
-                      placeholder={dict.contact.formNamePlaceholder}
+                      placeholder="Ej. Juan Pérez"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">{dict.contact.formEmail}</label>
+                    <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">Email</label>
                     <input
                       required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                       className="w-full h-10 px-3 rounded-md border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800 text-sm text-ink-900 dark:text-white focus:outline-none focus:border-pulse-600 focus:shadow-[0_0_0_3px_rgba(5,150,105,0.15)] transition-shadow"
-                      placeholder={dict.contact.formEmailPlaceholder}
+                      placeholder="Ej. juan@ejemplo.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">{dict.contact.formSubject}</label>
+                  <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">Asunto</label>
                   <input
                     required value={subject} onChange={(e) => setSubject(e.target.value)}
                     className="w-full h-10 px-3 rounded-md border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800 text-sm text-ink-900 dark:text-white focus:outline-none focus:border-pulse-600 focus:shadow-[0_0_0_3px_rgba(5,150,105,0.15)] transition-shadow"
-                    placeholder={dict.contact.formSubjectPlaceholder}
+                    placeholder="¿En qué puedo ayudarte?"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">{dict.contact.formMessage}</label>
+                  <label className="block text-sm font-medium text-ink-700 dark:text-ink-300 mb-1.5">Mensaje</label>
                   <textarea
                     required value={message} onChange={(e) => setMessage(e.target.value)} rows={5}
                     className="w-full px-3 py-2.5 rounded-md border border-ink-200 dark:border-ink-700 bg-white dark:bg-ink-800 text-sm text-ink-900 dark:text-white focus:outline-none focus:border-pulse-600 focus:shadow-[0_0_0_3px_rgba(5,150,105,0.15)] transition-shadow resize-none"
-                    placeholder={dict.contact.formMessagePlaceholder}
+                    placeholder="Cuéntame sobre tu proyecto..."
                   />
                 </div>
-                <button type="submit" className="btn btn-primary">
-                  <Send size={14} /> {dict.contact.formSubmit}
-                </button>
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" className="btn btn-primary">
+                  <Send size={14} /> Enviar mensaje
+                </motion.button>
               </form>
             )}
           </div>
 
           {/* Info */}
           <div className="space-y-8">
-            <h2 className="text-2xl font-semibold text-ink-900 dark:text-white tracking-tight">{dict.contact.otherWays}</h2>
+            <h2 className="text-2xl font-semibold text-ink-900 dark:text-white tracking-tight">Otras formas de conectar</h2>
             <div className="space-y-6">
               <Link href="mailto:zaratesamu99@gmail.com" target="_blank" className="block no-underline">
-                <InfoCard icon={<Mail size={18} />} title="Email" desc="zaratesamu99@gmail.com" sub={dict.contact.emailDesc} />
+                <InfoCard icon={<Mail size={18} />} title="Email" desc="zaratesamu99@gmail.com" sub="Respondo en menos de 24 horas" />
               </Link>
               <Link href="https://www.linkedin.com/in/s4m0l/" target="_blank" className="block no-underline">
-                <InfoCard icon={<Linkedin size={18} />} title="LinkedIn" desc="in/s4m0l" sub={dict.contact.linkedinDesc} />
+                <InfoCard icon={<Linkedin size={18} />} title="LinkedIn" desc="in/s4m0l" sub="Conecta conmigo en LinkedIn" />
               </Link>
               <Link href="https://github.com/s4mooel" target="_blank" className="block no-underline">
-                <InfoCard icon={<Github size={18} />} title="GitHub" desc="github.com/s4mooel" sub={dict.contact.githubDesc} />
+                <InfoCard icon={<Github size={18} />} title="GitHub" desc="github.com/s4mooel" sub="Revisa mis proyectos" />
               </Link>
               <div className="block no-underline">
-                <InfoCard icon={<User size={18} />} title="Samuel Ibañez" desc="Desarrollador Frontend" sub={dict.contact.devDesc} />
+                <InfoCard icon={<User size={18} />} title="Samuel Zarate" desc="Desarrollador Frontend" sub="Disponible para nuevos retos" />
               </div>
             </div>
           </div>
@@ -132,8 +126,8 @@ export default function ContactPage() {
       {/* FAQ */}
       <section className="border-b border-ink-150 dark:border-ink-800 bg-ink-50 dark:bg-ink-900/30">
         <div className="max-w-narrow mx-auto px-8 py-20">
-          <div className="eyebrow mb-4 text-center">{dict.contact.faqEyebrow}</div>
-          <h2 className="text-3xl font-semibold tracking-tight text-ink-900 dark:text-white mb-12 text-center">{dict.contact.faqTitle}</h2>
+          <div className="eyebrow mb-4 text-center">Preguntas Frecuentes</div>
+          <h2 className="text-3xl font-semibold tracking-tight text-ink-900 dark:text-white mb-12 text-center">Respuestas rápidas</h2>
           <div className="space-y-2">
             {FAQS.map((faq, i) => (
               <div key={i} className="bg-white dark:bg-ink-900 border border-ink-150 dark:border-ink-800 rounded-lg overflow-hidden">
@@ -166,7 +160,7 @@ export default function ContactPage() {
 
 function InfoCard({ icon, title, desc, sub }: { icon: React.ReactNode; title: string; desc: string; sub: string }) {
   return (
-    <div className="flex gap-4 group">
+    <motion.div whileHover={{ x: 5 }} className="flex gap-4 group cursor-pointer">
       <div className="w-10 h-10 rounded-md bg-pulse-50 dark:bg-pulse-900/30 text-pulse-700 dark:text-pulse-400 flex items-center justify-center flex-shrink-0 group-hover:bg-pulse-100 dark:group-hover:bg-pulse-900/50 transition-colors">
         {icon}
       </div>
@@ -175,6 +169,6 @@ function InfoCard({ icon, title, desc, sub }: { icon: React.ReactNode; title: st
         <div className="text-sm text-ink-700 dark:text-ink-300 mt-0.5">{desc}</div>
         <div className="text-xs text-ink-500 dark:text-ink-400 mt-0.5">{sub}</div>
       </div>
-    </div>
+    </motion.div>
   );
 }
