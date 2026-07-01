@@ -1,15 +1,20 @@
 import type { Metadata } from 'next';
+import { Toaster } from 'sonner';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Pulse Commerce — Commerce infrastructure for brands that move',
+  title: 'Pulse Commerce — Infraestructura de comercio para marcas',
   description:
-    'Pulse Commerce is the operating system for modern retail. One system of record for orders, inventory, customers, and storefronts.',
+    'Pulse Commerce es el sistema operativo para el retail moderno. Un único sistema de registro para pedidos, inventario, clientes y tiendas.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ 
+  children,
+}: { 
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -26,7 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster position="bottom-right" richColors />
+      </body>
     </html>
   );
 }

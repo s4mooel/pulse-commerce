@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import DashboardShell from '@/components/DashboardShell';
 import { Save, Trash2, Plus, Shield } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import en from '@/dictionaries/en.json';
+import es from '@/dictionaries/es.json';
 
 const TABS = ['General', 'Notifications', 'Billing', 'Team', 'Danger zone'];
 
@@ -14,6 +17,10 @@ const TEAM = [
 ];
 
 export default function SettingsPage() {
+  const pathname = usePathname();
+  const lang = (pathname.split('/')[1] as 'en' | 'es') || 'es';
+  const dict = lang === 'en' ? en : es;
+
   const [tab, setTab] = useState('General');
   const [storeName, setStoreName] = useState('Northland Outfitters');
   const [storeUrl, setStoreUrl] = useState('northland.pulsecommerce.io');
@@ -31,7 +38,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <DashboardShell title="Settings" eyebrow="Store configuration">
+    <DashboardShell title={dict.dashboard.settingsTitle} eyebrow={lang === 'es' ? 'Configuración de la tienda' : 'Store configuration'}>
       {/* Tabs */}
       <div className="flex flex-wrap gap-1 mb-8 border-b border-ink-150 dark:border-ink-800 pb-px">
         {TABS.map((t) => (

@@ -34,7 +34,7 @@ const CHART_COLORS = ['#059669', '#34D399', '#047857', '#10B981', '#6EE7B7'];
 const REGION_COLORS = ['#059669', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6'];
 
 // ─── Mock analytics data ─────────────────────────
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTHS = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
 const REVENUE_DATA = [42000, 48000, 55000, 51000, 62000, 68000, 71000, 75000, 82000, 78000, 91000, 98000];
 const ORDERS_DATA = [180, 210, 240, 220, 270, 290, 310, 330, 360, 340, 400, 430];
 const CHANNEL_DATA = { Web: 520, POS: 180, Wholesale: 140, Marketplace: 90 };
@@ -64,7 +64,7 @@ export function RevenueLineChart() {
         labels: MONTHS,
         datasets: [
           {
-            label: 'Revenue',
+            label: 'Ingresos',
             data: REVENUE_DATA,
             borderColor: PULSE[600],
             backgroundColor: dark
@@ -129,7 +129,7 @@ export function OrdersByChannelBar() {
         labels: Object.keys(CHANNEL_DATA),
         datasets: [
           {
-            label: 'Orders',
+            label: 'Órdenes',
             data: Object.values(CHANNEL_DATA),
             backgroundColor: [PULSE[600], PULSE[400], PULSE[700], PULSE[300]],
             borderRadius: 6,
@@ -230,7 +230,7 @@ export function TopProductsBar() {
         labels: TOP_PRODUCTS.map((p) => p.name),
         datasets: [
           {
-            label: 'Revenue',
+            label: 'Ingresos',
             data: TOP_PRODUCTS.map((p) => p.revenue),
             backgroundColor: CHART_COLORS,
             borderRadius: 6,
@@ -279,10 +279,10 @@ export function TopProductsBar() {
 // ─── Analytics KPIs ──────────────────────────────
 export function AnalyticsKPIs() {
   const kpis = [
-    { label: 'Total Revenue', value: '$821,000', delta: '+18.2%', up: true },
-    { label: 'Total Orders', value: '3,580', delta: '+12.5%', up: true },
-    { label: 'Conversion Rate', value: '3.8%', delta: '+0.4%', up: true },
-    { label: 'Avg Session', value: '4m 32s', delta: '-0.2%', up: false },
+    { label: 'Ingresos Totales', value: '$821,000', delta: '+18.2%', up: true },
+    { label: 'Órdenes Totales', value: '3,580', delta: '+12.5%', up: true },
+    { label: 'Tasa de Conversión', value: '3.8%', delta: '+0.4%', up: true },
+    { label: 'Sesión Promedio', value: '4m 32s', delta: '-0.2%', up: false },
   ];
 
   return (
@@ -293,7 +293,7 @@ export function AnalyticsKPIs() {
           <div className="numeric text-3xl font-semibold tracking-tight text-ink-900 dark:text-white mb-1">{k.value}</div>
           <div className={`text-xs ${k.up ? 'text-pulse-700 dark:text-pulse-400' : 'text-danger'}`}>
             <span className="numeric">{k.delta}</span>
-            <span className="text-ink-500 ml-1">vs last period</span>
+            <span className="text-ink-500 ml-1">vs periodo anterior</span>
           </div>
         </div>
       ))}
