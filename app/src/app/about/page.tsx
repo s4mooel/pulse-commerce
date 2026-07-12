@@ -174,7 +174,7 @@ export default function AboutPage() {
             <p className="text-ink-300 max-w-[480px]">Revisa mi GitHub para ver el código fuente o contáctame en LinkedIn para oportunidades de trabajo.</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} whileHover={{ scale: 1.05 }}>
-            <Link href="/login" className="btn btn-primary no-underline">
+            <Link href="/dashboard" className="btn btn-primary no-underline">
               Explorar el Dashboard <ArrowRight size={16} />
             </Link>
           </motion.div>
